@@ -2,10 +2,10 @@ package fonte;
 
 public class Fatura {
 	private int data;
-	private float valor_total;
+	private double valor_total;
 	private String nome;
 	
-	public Fatura(int data, float valor_total, String nome) {
+	public Fatura(int data, double valor_total, String nome) {
 		this.data = data;
 		this.valor_total = valor_total;
 		this.nome = nome;
@@ -15,7 +15,7 @@ public class Fatura {
 		return data;
 	}
 	
-	public float getValor_total() {
+	public double getValor_total() {
 		return valor_total;
 	}
 	

@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import fonte.Boleto;
+import fonte.Cliente;
+import fonte.Fatura;
 
 public class TestePagamentoBoleto {
 
@@ -26,4 +28,22 @@ public class TestePagamentoBoleto {
 	}
 	
 	@DisplayName("teste para criação do cliente")
+	@Test
+	public void testCliente() {
+		Cliente teste = new Cliente("Mona", "24589736144");
+		Assertions.assertEquals("Mona",teste.getNome());
+		Assertions.assertEquals("24589736144",teste.getCpf());
+			
+	}
+	
+	@DisplayName("teste para criação de uma fatura")
+	@Test
+	public void testFatura() {
+		Fatura teste = new Fatura(06102020,28.90,"Mona");
+		Assertions.assertAll(teste,
+				() -> assertEquals(06102020,teste.getData()),
+				() -> assertEquals(28.90,teste.getValor_total()),
+				() -> assertEquals("Mona",teste.getNome())
+				);
+	}
 }
