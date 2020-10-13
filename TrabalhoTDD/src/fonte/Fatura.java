@@ -9,7 +9,7 @@ public class Fatura {
 	public Boleto[] boletos;
 	private int count = 0;
 	public Pagamento[] pagamentos;
-	public String estado;
+	public String estado = "Não pago";
 	
 	public Fatura(String data, double valor_total, String nome) {
 		this.data = data;
@@ -69,5 +69,17 @@ public class Fatura {
 			this.count = count +1;
 		}
 	}
-
+	
+	public void efetuaPagamento(Fatura fatura, int num_boleto, String data, String tipo_pagamento) {
+		double soma_valor = 0;
+		Pagamento pagamento = new Pagamento(fatura.boletos[num_boleto-1].getValor(),"05102020","Boleto");
+		fatura.pagamentos[num_boleto-1] = pagamento;
+		for(int i = 0;i<fatura.pagamentos.length;i++) {
+			soma_valor = soma_valor + fatura.pagamentos[i].getValor_pago();
+		}
+		if(soma_valor >= fatura.getValor_total()){
+			fatura.setEstado("Pago");
+		}
+		
+	}
 }
