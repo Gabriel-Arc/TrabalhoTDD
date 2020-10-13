@@ -1,21 +1,21 @@
 package fonte;
 
 public class Boleto {
-	private int codigo;
-	private int data;
+	private String codigo;
+	private String data;
 	private double valor;
 	
-	public Boleto(int codigo, int data, double valor) {
+	public Boleto(String codigo, String data, double valor) {
 		this.codigo = codigo;
 		this.data = data;
 		this.valor = valor;
 	}
 	
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 	
-	public int getData() {
+	public String getData() {
 		return data;
 	}
 	
@@ -23,11 +23,11 @@ public class Boleto {
 		return valor;
 	}
 	
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	
-	public void setData(int data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	
